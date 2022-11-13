@@ -1,7 +1,7 @@
 package com.capitole.test.controller;
 
 import com.capitole.test.controller.request.GetPricesRequest;
-import com.capitole.test.controller.response.GetPricesResponse;
+import com.capitole.test.controller.response.GetPriceResponse;
 import com.capitole.test.usecase.GetPricesUseCase;
 import java.util.Optional;
 import javax.validation.Valid;
@@ -21,10 +21,10 @@ public class GetPriceController {
   private final GetPricesUseCase useCase;
 
   @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
-  public ResponseEntity<GetPricesResponse> getPrices(
+  public ResponseEntity<GetPriceResponse> getPrices(
       @RequestBody @Valid GetPricesRequest params) {
 
-    Optional<GetPricesResponse> result = useCase.getPrices(params);
+    Optional<GetPriceResponse> result = useCase.getPrices(params);
     return result.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.noContent().build());
   }
 
