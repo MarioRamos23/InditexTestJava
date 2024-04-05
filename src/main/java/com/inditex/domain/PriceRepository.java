@@ -18,6 +18,8 @@ public interface PriceRepository extends JpaRepository<PriceEntity, Long> {
       BETWEEN START_DATE AND END_DATE
       AND :brandId = BRAND_ID
       AND :productId = PRODUCT_ID
+      ORDER BY PRIORITY DESC
+      LIMIT 1;
       """, nativeQuery = true)
   PriceEntity findByFilterParams(@Param("date") ZonedDateTime date, @Param("brandId") Long brandId,
                                  @Param("productId") Long productId);
