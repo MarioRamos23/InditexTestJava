@@ -1,20 +1,26 @@
 
 spring:
   datasource:
-    url: jdbc:h2:mem:devdb
+    url: jdbc:h2:mem:test
     driverClassName: org.h2.Driver
     username: sa
-    password: password
+    password:
+  sql:
+    init:
+      mode: always
+
   h2:
     console:
       enabled: true
+      path: /h2-console
 
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
     defer-datasource-initialization: true
     show-sql: true
-    properties:
-      hibernate:
-        dialect: H2Dialect
-        format_sql: true
+
+logging:
+  level:
+    sql: debug

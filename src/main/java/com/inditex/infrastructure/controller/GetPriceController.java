@@ -1,10 +1,11 @@
-package com.capitole.test.controller;
+package com.inditex.infrastructure.controller;
 
-import com.capitole.test.controller.request.GetPricesRequest;
-import com.capitole.test.controller.response.GetPriceResponse;
-import com.capitole.test.usecase.GetPricesUseCase;
+import com.inditex.infrastructure.controller.request.GetPricesRequest;
+import com.inditex.infrastructure.controller.response.GetPriceResponse;
+import com.inditex.application.usecase.GetPricesUseCase;
 import java.util.Optional;
 import javax.validation.Valid;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

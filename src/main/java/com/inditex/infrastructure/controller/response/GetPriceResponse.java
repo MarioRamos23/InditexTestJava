@@ -1,4 +1,4 @@
-package com.capitole.test.controller.response;
+package com.inditex.infrastructure.controller.response;
 
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
@@ -13,10 +13,11 @@ import lombok.Setter;
 @Setter
 public class GetPriceResponse {
 
-  private ZonedDateTime date;
   private Long brandId;
   private Long productId;
   private Long priceList;
+  private ZonedDateTime startDate;
+  private ZonedDateTime endDate;
   private BigDecimal price;
 
 }

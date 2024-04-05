@@ -1,4 +1,4 @@
-package com.capitole.test.repository.model;
+package com.inditex.domain.model;
 
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
@@ -17,7 +17,7 @@ import lombok.experimental.SuperBuilder;
 @Data
 @SuperBuilder
 @NoArgsConstructor
-public class Price {
+public class PriceEntity {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
