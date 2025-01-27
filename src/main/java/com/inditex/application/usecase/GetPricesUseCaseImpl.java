@@ -22,13 +22,13 @@ public class GetPricesUseCaseImpl implements GetPricesUseCase {
   private final PriceMapper mapper;
 
   @Override
-  public Optional<GetPriceResponse> getPrices(GetPricesRequest params) {
+  public Optional<GetPriceResponse> getPrices(GetPricesRequest request) {
 
     DateTimeFormatter formatter = DateTimeFormatter.ISO_OFFSET_DATE_TIME;
-    ZonedDateTime zonedDateTime = ZonedDateTime.parse(params.getDate(), formatter);
+    ZonedDateTime zonedDateTime = ZonedDateTime.parse(request.date(), formatter);
 
-    PriceEntity response = priceRepository.findByFilterParams(zonedDateTime, params.getBrandId(),
-            params.getProductId());
+    PriceEntity response = priceRepository.findByFilterParams(zonedDateTime, request.brandId(),
+            request.productId());
     return Optional.of(mapper.priceEntityToGetPriceResponse(response));
   }
 }

@@ -4,7 +4,7 @@ import com.inditex.infrastructure.controller.request.GetPricesRequest;
 import com.inditex.infrastructure.controller.response.GetPriceResponse;
 import com.inditex.application.usecase.GetPricesUseCase;
 import java.util.Optional;
-import javax.validation.Valid;
+import jakarta.validation.Valid;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
