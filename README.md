@@ -1,1 +1,1 @@
-# Inditex test
+# Inditex
